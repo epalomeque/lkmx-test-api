@@ -17,6 +17,7 @@ class ProductCreate(ProductBase):
 class Product(ProductBase):
     id: UUID
     created_at: datetime
+    last_modification: datetime
     model_config = ConfigDict(from_attributes=True)
 
 class UserBase(BaseModel):

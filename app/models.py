@@ -22,6 +22,7 @@ class Product(Base):
     category = Column(Enum(CategoryEnum), nullable=False)
     stock = Column(Integer, nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+    last_modification = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
 class User(Base):
     __tablename__ = "users"
