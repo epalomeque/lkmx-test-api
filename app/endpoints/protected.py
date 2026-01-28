@@ -69,9 +69,9 @@ def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     users = db.query(User).offset(skip).limit(limit).all()
     return users
 
-# --- Agregaciones ---
+# --- Agregaciones / Reportes ---
 
-@router.get("/aggregations/products-by-category", response_model=List[AggregationResponse])
+@router.get("/reports/products/category", response_model=List[AggregationResponse])
 def get_products_aggregation(db: Session = Depends(get_db)):
     results = db.query(
         Product.category,

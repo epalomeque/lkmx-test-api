@@ -1,5 +1,4 @@
 from logging.config import fileConfig
-import os
 from dotenv import load_dotenv
 
 from sqlalchemy import engine_from_config
@@ -29,11 +28,6 @@ config.set_main_option("sqlalchemy.url", SQLALCHEMY_DATABASE_URL)
 from app.database import Base
 from app.models import Product, User # Import models to ensure they are registered
 target_metadata = Base.metadata
-
-# other values from the config, defined by the needs of env.py,
-# can be acquired:
-# my_important_option = config.get_main_option("my_important_option")
-# ... etc.
 
 
 def run_migrations_offline() -> None:
