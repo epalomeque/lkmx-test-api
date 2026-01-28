@@ -29,5 +29,6 @@ class User(Base):
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     name = Column(String(255), nullable=False)
     lastname = Column(String(255), nullable=False)
-    alias = Column(String(30), nullable=False)
-    tel = Column(String(30)) # El requerimiento dice tel: integer, 30 caracteres. Pero 30 caracteres no cabe en integer. Lo pondré como String(30) o bigint si es numérico.
+    alias = Column(String(30), nullable=False, unique=True)
+    hashed_password = Column(String(255), nullable=False)
+    tel = Column(String(30)) 

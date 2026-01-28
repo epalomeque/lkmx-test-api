@@ -8,3 +8,4 @@ pydantic[email]
 python-jose[cryptography]
 requests
 python-multipart
+passlib[bcrypt]

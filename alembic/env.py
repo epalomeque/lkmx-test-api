@@ -19,7 +19,8 @@ if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
 # Set sqlalchemy.url from environment variable
-config.set_main_option("sqlalchemy.url", os.environ.get("DATABASE_URL", "postgresql://user:password@localhost/dbname"))
+from app.database import SQLALCHEMY_DATABASE_URL
+config.set_main_option("sqlalchemy.url", SQLALCHEMY_DATABASE_URL)
 
 # add your model's MetaData object here
 # for 'autogenerate' support

@@ -37,3 +37,11 @@ class AggregationResponse(BaseModel):
     total_stock: int
     average_price: Decimal
     product_count: int
+
+class LoginRequest(BaseModel):
+    alias: str
+    password: str
+
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str
